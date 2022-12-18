@@ -12,13 +12,17 @@ namespace Boncu_Nicole_Beatrice_Lab2.Models
         [Display(Name = "Book Title")]
         public string Title { get; set; }
         // [RegularExpression(@"&^[A-Z][a-z]+$",
-        // ErorrMessage ="Numele autorului trebuie sa fie sub forma 'Prenume Nume'"), Required,
-        //StringLength(50, MinimumLength =3)]
+        // ErorrMessage ="Numele autorului trebuie sa fie sub forma 'Prenume Nume'"), Required,Mandatory
+        //StringLength(150, MinimumLength =3)]
+
+    
         public int? AuthorID { get; set; }
         public Author? Author { get; set; }
         //[Range(1, 300)]
 
         [Column(TypeName = "decimal(6, 2)")]
+         [Range(0.01, 500)]
+
         public decimal Price { get; set; }
 
         [DataType(DataType.Date)]

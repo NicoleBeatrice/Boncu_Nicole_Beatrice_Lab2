@@ -7,14 +7,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Boncu_Nicole_Beatrice_Lab2.Data;
 using Boncu_Nicole_Beatrice_Lab2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Boncu_Nicole_Beatrice_Lab2.Pages.Books
-{
+{ 
+    [Authorize(Roles = "Admin")]
     public class CreateModel : BookCategoriesPageModel
 
     {
+        
         private readonly Boncu_Nicole_Beatrice_Lab2.Data.Boncu_Nicole_Beatrice_Lab2Context _context;
-
+        
         public CreateModel(Boncu_Nicole_Beatrice_Lab2.Data.Boncu_Nicole_Beatrice_Lab2Context context)
         {
             _context = context;
